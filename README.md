@@ -13,112 +13,173 @@ and the Flutter guide for
 
 # Expandable Content List
 
-A Flutter package for displaying expandable content modules with a "See More/Less" toggle.
+A powerful and flexible Flutter package for displaying expandable sections of grouped content with smooth animations and customizable styling. Perfect for building modern, interactive UIs with collapsible content sections.
 
-## Features
+## 🌟 Features
 
-- Display a list of expandable content modules
-- Show a limited number of items initially
-- "See More/Less" toggle functionality
-- Auto-scroll to expanded list
-- Customizable styles and layouts
-- Support for custom item builders
-- Optional separator widget
+- 📦 **Grouped Content Display**: Organize content into logical sections with expandable/collapsible functionality
+- 🎯 **Smart Item Limiting**: Show a limited number of items initially with "See More/Less" toggle
+- 🎨 **Highly Customizable**: 
+  - Custom section headers
+  - Custom item builders
+  - Customizable text styles and colors
+  - Flexible layout options
+- ⚡ **Performance Optimized**: Built with Flutter's best practices for smooth scrolling and animations
+- 📱 **Responsive Design**: Works seamlessly across different screen sizes
+- 🎭 **Rich Styling Options**: 
+  - Custom toggle button styles
+  - Custom section header builders
+  - Custom item builders
+  - Custom separators
 
-## Installation
+## 📦 Installation
 
-Add this to your package's `pubspec.yaml` file:
+Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
   expandable_content_list: ^0.1.0
 ```
 
-## Usage
+Or run:
+```bash
+flutter pub add expandable_content_list
+```
+
+## 🚀 Quick Start
 
 ```dart
 import 'package:expandable_content_list/expandable_content_list.dart';
 
-// Create your content modules
-final modules = [
-  ContentModule(
-    moduleId: '1',
-    moduleTitle: 'Module 1',
-    items: [
-      ContentItem(
-        id: '1',
-        title: 'Item 1',
-        description: 'Description for item 1',
-      ),
-      ContentItem(
-        id: '2',
-        title: 'Item 2',
-        description: 'Description for item 2',
-      ),
-    ],
-  ),
-  // Add more modules...
-];
+// Define your section model
+class Section<T> {
+  final String id;
+  final String title;
+  final List<T> items;
+  
+  const Section({
+    required this.id,
+    required this.title,
+    required this.items,
+  });
+}
 
 // Use the widget
-ExpandableContentSection(
-  modules: modules,
-  limit: 5,
-  seeMoreText: 'See More',
+ExpandableContentSection<ListItem, Section<ListItem>>(
+  sections: [
+    Section(
+      id: '1',
+      title: 'Featured Products',
+      items: [
+        ListItem(
+          id: '1',
+          title: 'Product 1',
+          description: 'Description 1',
+        ),
+        // More items...
+      ],
+    ),
+  ],
+  limit: 2,
+  seeMoreText: 'View All Products',
   seeLessText: 'Show Less',
   onItemTap: (item) {
     // Handle item tap
-    print('Tapped item: ${item.title}');
   },
-  moduleTitleTextStyle: TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.bold,
-  ),
-  itemTextStyle: TextStyle(
-    fontSize: 16,
-  ),
-  separator: ContentSeparator(
-    color: Colors.grey,
-    thickness: 1.0,
-  ),
 );
 ```
 
-## Customization
+## 🎨 Advanced Usage
 
-The package provides several customization options:
-
-- `moduleTitleTextStyle`: Custom text style for module titles
-- `itemTextStyle`: Custom text style for item titles
-- `toggleButtonStyle`: Custom style for the toggle button
-- `itemBuilder`: Custom builder for content items
-- `separator`: Custom separator widget between items
-
-## Example
-
+### Custom Section Header
 ```dart
-// Custom item builder example
 ExpandableContentSection(
-  modules: modules,
-  limit: 5,
-  seeMoreText: 'See More',
-  seeLessText: 'Show Less',
-  onItemTap: (item) => print('Tapped: ${item.title}'),
+  // ... other properties
+  sectionHeaderBuilder: (section) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.blue.withOpacity(0.1), Colors.blue.withOpacity(0.05)],
+        ),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Icon(Icons.category),
+          SizedBox(width: 12),
+          Text(
+            section.title,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  },
+);
+```
+
+### Custom Item Builder
+```dart
+ExpandableContentSection(
+  // ... other properties
   itemBuilder: (item) => Card(
+    margin: const EdgeInsets.symmetric(vertical: 4),
     child: ListTile(
-      leading: Icon(Icons.article),
       title: Text(item.title),
-      subtitle: Text(item.description ?? ''),
+      subtitle: Text(item.description),
       trailing: Icon(Icons.chevron_right),
     ),
   ),
 );
 ```
 
-## Contributing
+## ⚙️ API Reference
+
+### ExpandableContentSection Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `sections` | `List<S>` | List of sections to display |
+| `limit` | `int` | Number of items to show initially |
+| `seeMoreText` | `String` | Text for the expand button |
+| `seeLessText` | `String` | Text for the collapse button |
+| `onItemTap` | `Function(T)` | Callback when an item is tapped |
+| `toggleButtonStyle` | `ButtonStyle` | Style for the toggle button |
+| `toggleButtonTextStyle` | `TextStyle` | Style for the toggle button text |
+| `toggleButtonAlignment` | `Alignment` | Alignment of the toggle button |
+| `itemBuilder` | `Widget Function(T)` | Custom builder for items |
+| `sectionHeaderBuilder` | `Widget Function(S)` | Custom builder for section headers |
+
+## 📱 Screenshots
+
+![Demo](https://example.com/demo.gif)
+
+## 🎯 Use Cases
+
+- Course content organization
+- Product category listings
+- FAQ sections
+- News article categories
+- Task lists with priorities
+- Playlist organization
+- Documentation sections
+
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+

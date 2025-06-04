@@ -924,27 +924,27 @@ class MyApp extends StatelessWidget {
           title: const Text('Expandable Content List Examples'),
           backgroundColor: Colors.deepPurple.shade100,
         ),
-        body: SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: Column(
             children: [
               // Example 1: Simple List without Sections
-              const SimpleListExample(),
-              const Divider(height: 16),
+              SimpleListExample(),
+              Divider(height: 16),
 
               // Example 2: Product Categories with Sections
-              const ProductCategoriesExample(),
-              const Divider(height: 16),
+              ProductCategoriesExample(),
+              Divider(height: 16),
 
               // Example 3: News Articles with Modern Design
-              const NewsArticlesExample(),
-              const Divider(height: 16),
+              NewsArticlesExample(),
+              Divider(height: 16),
 
               // Example 4: Task List with Priority Sections
-              const TaskListExample(),
-              const Divider(height: 16),
+              TaskListExample(),
+              Divider(height: 16),
 
               // Example 5: FAQ Section with Expandable Answers
-              const FAQExample(),
+              FAQExample(),
             ],
           ),
         ),
