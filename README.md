@@ -31,6 +31,10 @@ A powerful and flexible Flutter package for displaying expandable sections of gr
   - Custom section header builders
   - Custom item builders
   - Custom separators
+ 
+## 🌟 Visual Preview
+
+https://github.com/user-attachments/assets/b0d80841-46cc-4fe4-af64-9d4761589736
 
 ## 📦 Installation
 
