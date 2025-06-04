@@ -34,7 +34,7 @@ A powerful and flexible Flutter package for displaying expandable sections of gr
  
 ## 🌟 Visual Preview
 
-https://github.com/user-attachments/assets/b0d80841-46cc-4fe4-af64-9d4761589736
+![expandable_content_list+(1)](https://github.com/user-attachments/assets/10836449-41f3-440d-99b6-34320323387d)
 
 ## 📦 Installation
 
