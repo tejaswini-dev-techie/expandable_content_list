@@ -24,3 +24,8 @@
 
 * Minor Bug Fix
 
+## 0.0.3
+
+* Updated package description to be more concise
+* A Flutter package for creating expandable content sections with customizable styling and animations
+

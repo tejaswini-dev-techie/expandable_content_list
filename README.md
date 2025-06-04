@@ -42,7 +42,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  expandable_content_list: ^0.1.0
+  expandable_content_list: ^0.0.3
 ```
 
 Or run:
