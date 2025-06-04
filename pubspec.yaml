@@ -1,6 +1,6 @@
 name: expandable_content_list
 description: A powerful Flutter package for displaying expandable content sections with smooth animations and customizable styling. Perfect for building modern, interactive UIs with collapsible content sections like product listings, FAQs, course modules, and more.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/tejaswini-dev-techie/expandable_content_list
 repository: https://github.com/tejaswini-dev-techie/expandable_content_list.git
 

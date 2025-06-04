@@ -18,3 +18,9 @@
   * Added comprehensive README with installation and usage instructions
   * Included API reference and customization guide
   * Added example code snippets for common use cases
+
+
+## 0.0.2
+
+* Minor Bug Fix
+

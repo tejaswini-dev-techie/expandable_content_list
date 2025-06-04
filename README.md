@@ -158,10 +158,6 @@ ExpandableContentSection(
 | `itemBuilder` | `Widget Function(T)` | Custom builder for items |
 | `sectionHeaderBuilder` | `Widget Function(S)` | Custom builder for section headers |
 
-## 📱 Screenshots
-
-![Demo](https://example.com/demo.gif)
-
 ## 🎯 Use Cases
 
 - Course content organization
